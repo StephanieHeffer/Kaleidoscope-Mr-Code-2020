@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            position: relative;
+        }
+
+        .kaleidoscope {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .kaleidoscope div::before, .kaleidoscope div::after, .kaleidoscope div{
+            content: '';
+            position: fixed;
+            border: 5vw double rgba(112, 248, 286, 0.25);
+            outline: 5vw double rgba(202, 254, 72, 0.25);
+        }
+
+        .kaleidoscope > div {
+            transform: translateX(50vw) translateY(20vh);
+        }
+
+        .kaleidoscope div{
+            transform: rotate(0.1turn);
+            margin: 1em;
+        }
+
+        .kaleidoscope div::after{
+            animation: bloop 4s -4s infinite ease-in-out both alternate;
+        }
+
+        .kaleidoscope div::before{
+            animation: bloop 4s -4s infinite ease-in-out both alternate;
+        }
+
+        @keyframes bloop{
+            to{
+                transform: rotate(1.5turn);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Seção 1</h2>
+    </section>
+    <section>
+        <div class="kaleidoscope">
+            <div><div><div><div><div><div><div><div><div><div></div></div></div></div></div></div></div></div></div></div>
+        </div>
+    </section>
+    <section>
+        <h2>Seção 2</h2>
+    </section>
+</body>
+</html>
+

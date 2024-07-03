@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     div::before, div::after, div{
+        content: '';
+        position: fixed;
+        border: 5vw double rgba(112, 248, 286, 0.25);
+        outline: 5vw double rgba(202, 254, 72, 0.25);
+     }
+     body > div {
+         transform: translateX(50vw) translateY(20vh);
+     }
+     div{
+         transform: rotate(0.1turn);
+         margin: 1em;
+     }
+     div::after{
+         animation: bloop 4s -4s infinite ease-in-out both alternate;
+     }
+     div::before{
+         animation: bloop 4s -4s infinite ease-in-out both alternate;
+     }
+     @keyframes bloop{
+         to{
+             transform: rotate(1.5turn);
+         }
+     }
+    </style>
+</head>
+<body>
+    <div><div><div><div><div><div><div><div><div><div></div></div></div></div></div></div></div></div></div></div>
+</body>
+</html>
